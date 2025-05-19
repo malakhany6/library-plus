@@ -1,0 +1,118 @@
+<!-- libraries-plus.component.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+ 
+<div class="main-container">
+    <!-- Header with logo -->
+    <div class="header">
+      <div class="logo-container">
+        <img src="assets/libraryplus-logo.png" class="logo">
+      </div>
+    </div>
+  
+    <!-- Main content divided into sections -->
+    <div class="content-container">
+      <!-- First column - Main -->
+      <div class="column">
+        <h2 class="section-title right-align">الرئيسية</h2>
+        <ul class="menu-list right-align">
+          <li><a href="#">عن التخصص</a></li>
+          <li><a href="#">مجالات التخصص</a></li>
+          <li><a href="#">عن أقسام المكتبات</a></li>
+        </ul>
+  
+        <h2 class="section-title right-align">الدليل المهني</h2>
+        <ul class="menu-list right-align">
+          <li><a href="#">دليل الوظائف</a></li>
+          <li><a href="#">مجموعة أدوات التطوير</a></li>
+          <li><a href="#">اتحادات وجمعيات المكتبات</a></li>
+          <li><a href="#">خدمات التوجيه المهني (قريبًا)</a></li>
+          <li><a href="#">الأخبار</a></li>
+        </ul>
+        <h2 class="section-title right-align">الأخبار</h2>
+        <ul class="menu-list right-align">
+           <li></li>
+          </ul>
+      </div>
+      
+  
+      <!-- Second column - Academic Resources -->
+      <div class="column">
+        <h2 class="section-title right-align">دليل الطالب</h2>
+        <h2 class="section-title right-align">اللوائح الدراسية</h2>
+        <ul class="menu-list right-align">
+          <li><a href="#">لائحة جامعة القاهرة</a></li>
+        </ul>
+        <h4 class="section-title right-align">مصادر التعلم</h4>
+        <ul class="menu-list right-align">
+          <li><a href="#">كتب أساسيات علم المكتبات</a></li>
+          <li><a href="#">دوريات ومجالات</a></li>
+          <li><a href="#">قواعد بيانات متخصصة</a></li>
+          <li><a href="#">قواميس ومعاجم</a></li>
+          <li><a href="#">أدوات وأدلة</a></li>
+        </ul>
+        <h2 class="section-title right-align">مسارات التعلم الذاتي</h2>
+        <h2 class="section-title right-align">المنح الدراسية</h2>
+        <h2 class="section-title right-align">التدريبات (قريبًا)</h2>
+        <h4 class="section-title right-align">عن الموقع</h4>
+        <ul class="menu-list right-align">
+          <li><a href="#">من نحن ؟</a></li>
+          <li><a href="#">الأسئلة الأكثر شيوعًا</a></li>
+          </ul>
+      </div>
+  
+      <!-- Third column - Self-learning Guide -->
+      <div class="column">
+        <h2 class="section-title right-align">دليل الباحث</h2>
+        <h5 class="section-title right-align">العلوم البينية</h5>
+        <h5 class="section-title right-align">البحث العلمي</h5>
+        <ul class="menu-list right-align">
+          <li><a href="#">ورش عمل ودورات</a></li>
+          <li><a href="#">أدوات الذكاء الأصطناعي</a></li>
+          <li><a href="#">مصادر و مقالات</a></li>
+        </ul>
+        <h5 class="section-title right-align">محركات بحث اكاديمية</h5>
+        <h5 class="section-title right-align">أدوات الاستشهاد المرجعي</h5>
+        <h5 class="section-title right-align">الدراسات البارزة في المجال</h5>
+        <h5 class="section-title right-align">النشر الأكاديمي</h5>
+        <h5 class="section-title right-align">أدوات فحص النزاهة العلمية</h5>
+      </div>
+  
+      <!-- Fourth column - Newsletter -->
+      <div class="column">
+        <h2 class="section-title right-align">الرسائل الإخبارية</h2>
+        <div class="newsletter-form">
+          <div class="form-row">
+            <div class="form-group right-align">
+              <label for="name">الاسم</label>
+              <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Malak Hany" class="form-control">
+            </div>
+        
+            <div class="form-group right-align">
+              <label for="email">الايميل</label>
+              <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Malak.hany@gmail.com" class="form-control">
+            </div>
+          </div>
+          
+          <button class="subscribe-btn" (click)="subscribe()">اشترك</button>
+        </div>
+  
+        <div class="contact-info right-align">
+          <h3>اتصل بنا</h3>
+          <p>+02228899</p>
+          <p><a href="mailto:libraryplus@outlook.sa">libraryplusoutlook.sa</a></p>
+          
+          <div class="social-media">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <div class="footer">
+      <p>  Libraries Plus 2025 ©</p>
+    </div>
+  </div>

@@ -1,0 +1,202 @@
+/* Variables (using CSS variables instead of SCSS variables) */
+:root {
+    --primary-color: #4285F4;
+    --sidebar-width: 250px;
+    --sidebar-bg: #fff;
+    --text-color: #333;
+  }
+  
+  .main-container {
+    display: flex;
+    position: relative;
+  }
+  
+  /* Toggle button */
+  .toggle-button {
+    position: absolute;
+    top: 1px;
+    z-index: 2;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    direction: rtl;
+    background: #5FA8ED
+  }
+  
+  .toggle-button:hover {
+    background: var(--hover-bg);
+    direction: rtl;
+  }
+  
+  .toggle-button .close-icon {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 0;
+    overflow: hidden;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    height: 100%;
+    transition: width 0.3s ease;
+    flex-shrink: 0;
+    overflow-y: auto;
+    direction: rtl;
+  }
+  
+  .sidebar.expanded {
+    width: var(--sidebar-width);
+  }
+  
+  .sidebar .logo {
+    padding-top: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar .logo img {
+    height: 100px;
+  }
+
+  /* Navigation menu */
+  .nav-menu ul {
+    list-style: none;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .nav-menu ul li {
+    margin-bottom: 2px;
+  }
+  
+  .nav-menu .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 2px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+    transition: background-color 0.2s ease;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: -1px;
+    padding-left: 10px;
+  }
+  
+  .nav-menu .menu-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-menu .menu-item.active {
+    background-color: rgba(66, 133, 244, 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  .nav-menu .menu-item.active .icon {
+    color: var(--primary-color);
+  }
+  
+  .nav-menu .menu-item .icon {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-menu .menu-item .icon.chevron-down,
+  .nav-menu .menu-item .icon.chevron-up {
+    margin-left: auto;
+    margin-right: 0;
+    width: 20px;
+    height: 14px;
+  }
+  
+  /* Submenu */
+  .nav-menu .submenu {
+    padding-left: 10;
+  }
+  
+  .nav-menu .submenu .submenu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 50px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-menu .submenu .submenu-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-menu .submenu .submenu-item .icon {
+    margin-right: 12px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .nav-menu .submenu .submenu-item .tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-left: auto;
+  }
+  
+  /* Content area */
+  .content {
+    flex-grow: 1;
+    padding: 0px;
+    padding-left: 2px; /* Space for toggle button */
+    transition: padding-left 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .content.with-sidebar {
+    padding-left: 20px;
+  }
+  
+  /* Icons placeholder */
+  /* In a real application, you would use actual icons or an icon font */
+  /* Here we're using placeholders for simplicity */
+  .icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .icon.home-icon {
+    background-color: var(--primary-color);
+  }
+  
+  /* Media query for responsive design */
+  @media (max-width: 768px) {
+    .sidebar.expanded {
+      width: 100%;
+      position: absolute;
+      z-index: 5;
+    }
+    
+    .content.with-sidebar {
+      padding-left: 60px;
+    }
+  }

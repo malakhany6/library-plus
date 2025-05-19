@@ -1,0 +1,31 @@
+<!-- what-is-new.component.html -->
+<div class="whats-new-background">
+<div class="whats-new-container">
+    <div class="header-section">
+      <h1 class="main-title">ما الجديد؟</h1>
+      <div class="welcome-message">
+        <h2>مرحبًا بكم في Libraries Plus</h2>
+        <p>نحن نعمل دائمًا على تطوير وتحسين محتوانا لتزويدكم بأفضل المصادر والخدمات.</p>
+      </div>
+      <div class="show-all-updates">
+        <a href="#" class="show-all-link">
+          عرض كل الإضافات والتحديثات
+          <span class="arrow">&#x27F6;</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="updates-section">
+      <div *ngFor="let update of updates" class="update-card">
+        <div class="update-content">
+          <div class="update-date">{{ update.date }}</div>
+          <div class="update-title">{{ update.title }}</div>
+          <div class="update-description">{{ update.content }}</div>
+        </div>
+        <div class="arrow-container">
+          <span class="back-arrow">&#x27F5;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

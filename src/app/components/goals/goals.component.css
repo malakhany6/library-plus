@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+.goals-container {
+  direction: rtl;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), 
+                    url('/assets/librarywall.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  cursor: pointer;
+}
+
+.goals-header {
+  margin-bottom: 3rem;
+}
+
+.goals-header h1 {
+  font-size: 65px;
+  font-weight: bold;
+  position: relative;
+  font-family: 'cairo';
+
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.goal-card {
+  padding: 1.5rem;
+  background-color: rgba(29, 29, 75, 0.6);
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 80, 0.8);
+}
+
+.goal-card h2 {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'dubai';
+}
+
+.goal-card p {
+  font-size: 26px;
+  line-height: 1.2;
+  font-family: 'dubai';
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .goals-header h1 {
+    font-size: 2rem;
+  }
+  
+  .goal-card h2 {
+    font-size: 1.5rem;
+  }
+}

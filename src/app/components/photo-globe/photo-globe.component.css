@@ -1,0 +1,122 @@
+/* photo-globe.component.css */
+.globe-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    overflow: visible;
+    background: linear-gradient(to right, #E6F2FF, #5FA8ED);
+  }
+
+  .section-title {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center; 
+    margin: 30px 0;
+    color: #333;
+  }
+  
+  .globe {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    animation: rotate 60s linear infinite;
+  }
+  
+  .globe-surface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #1c88bb, #0a3a5a);
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png'), 
+                      radial-gradient(circle at 30% 30%, #1c88bb, #0a3a5a);
+    background-size: cover;
+    background-blend-mode: multiply;
+    opacity: 0.8;
+  }
+  
+  .photo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform-origin: center center -250px; /* Half the globe diameter */
+    transition: transform 0.5s;
+    z-index: 1;
+
+  }
+  
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateY(0) rotateX(5deg);
+    }
+    100% {
+      transform: rotateY(360deg) rotateX(5deg);
+    }
+  }
+  
+  /* Hover effect to make photos pop out */
+  .photo:hover {
+    transform-origin: center center -220px;
+    z-index: 10;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .globe {
+    flex: 2;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .info-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 2px solid #ccc;
+  }
+  
+  .photo-globe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.renderer-container {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-tooltip {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 9px 13px;
+  border-radius: 7px;
+  font-size: 24px;
+  pointer-events: none; /* Prevent tooltip from interfering with mouse events */
+  z-index: 1000;
+  max-width: 250px;
+  transform: translateX(-50%); /* Center tooltip on cursor */
+  direction: rtl; /* For Arabic text */
+  text-align: center;
+  cursor: pointer;
+}

@@ -1,0 +1,86 @@
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 2000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 200px;
+    height: auto;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .main-nav li {
+    margin: 0 15px;
+  }
+  
+  .main-nav a {
+    position: relative; /* مهم علشان نستخدم ::after */
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 34px;
+    transition: color 0.3s;
+    font-family: 'Calibri';
+    font-weight: bold;
+  }
+
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    width: 0;
+    height: 3px; /*بتحكم في سمك الخط*/
+    background-color: #000000;
+    transition: width 0.6s ease;
+  }
+  /*الكود ده الي هيخلي الكود بتاعي الي فوق يظهر*/
+  .main-nav a:hover::after {
+    width: 100%;
+  }
+  
+  .main-nav a:hover {
+    color: #1a73e8;
+  }
+  
+  .main-nav a.active {
+    color: #1a73e8;
+    font-weight: 700;
+  }
+  
+  .login-btn button {
+    background-color: #ffd84d;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Calibri';
+    margin-left: -800px;
+  }
+  
+  .login-btn button:hover {
+    background-color: #ffc107;
+  }

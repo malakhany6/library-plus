@@ -1,0 +1,168 @@
+.services-section {
+  padding: 80px 0;
+  margin-top: -570px;
+  background: linear-gradient(135deg, #e0f2ff 0%, #80c0ff 100%);
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  color: #325579;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: #3498db;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-description {
+  max-width: 2000px;
+  margin: 0 auto;
+  color: #000;
+  font-size: 22px;
+  line-height: 1.6;
+  
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f0f0f0; /* لون خلفية الدائرة */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.icon-container i {
+  font-size: 46px;
+  color: #333; /* لون الأيقونة */
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .icon-container {
+  background-color: #007bff; /* لون مختلف عند المرور */
+}
+
+.service-card:hover .icon-container i {
+  color: #fff; /* لون الأيقونة عند المرور */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 80px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-bottom: 3px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #3498db;
+}
+
+.icon-container {
+  width: 170px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background-color: #ecf0f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover .icon-container {
+  background-color: #3498db;
+}
+
+.material-icons {
+  font-size: 40px;
+  color: #3498db;
+  transition: all 0.3s ease;
+  font-family: 'cairo';
+}
+
+.service-card:hover .material-icons {
+  color: white;
+}
+
+.service-card h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-weight: 800;
+}
+
+.service-card p {
+  color: #234446;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.learn-more {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 2px solid #3498db;
+  color: #3498db;
+  border-radius: 90px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.learn-more:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 30px;
+  }
+  
+  .section-description {
+    font-size: 16px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

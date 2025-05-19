@@ -1,0 +1,24 @@
+<!-- whats-new.component.html -->
+<div class="whats-new-container">
+    <div class="header">
+      <h2 class="title">ما الجديد؟</h2>
+      <p class="subtitle">نحن نعمل دائماً على تطوير وتحسين محتوانا لتزويدكم بأفضل المصادر والخدمات.</p>
+    </div>
+
+    
+  <div class="features-container">
+    <div class="feature-card" *ngFor="let feature of features">
+      
+
+       <!-- خلفية الفيديو -->
+       <video *ngIf="feature.videoBackground" autoplay muted loop class="video-bg">
+        <source [src]="feature.videoBackground" type="video/mp4" />
+      </video>
+    
+        <div class="feature-content">
+          <h3>{{feature.title}}</h3>
+          <p>{{feature.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

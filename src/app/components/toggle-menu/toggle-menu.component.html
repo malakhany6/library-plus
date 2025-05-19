@@ -1,0 +1,210 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div class="main-container">
+    <!-- Toggle button -->
+    <button 
+    class="toggle-button" (click)="toggleMenu()">
+      <span *ngIf="!isExpanded">
+        <i class="fa-solid fa-bars"></i>
+      </span>
+      <span *ngIf="isExpanded" class="close-icon">×</span>
+    </button>
+  
+    <!-- Sidebar navigation -->
+    <div class="sidebar" [class.expanded]="isExpanded">
+      <div class="logo">
+        <a href="/">
+          <!--<img src="assets/libraryplus-logo.png" alt="">-->
+        </a>
+      </div>
+  
+      <nav class="nav-menu">
+        <ul>
+          <li>
+            <a href="#" class="menu-item" (click)="toggleHomeMenu()">
+              <span>الرئيسية</span>
+            </a>
+            <!--
+            <ul class="submenu" *ngIf="isHomeExpanded">
+              <li>
+                <a href="#" class="submenu-item">
+                  <span>إحصائيات</span>
+                  <i class="fa-solid fa-chevron-up"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="fa-solid fa-gauge"></i>
+                  <span>لوحة التحكم</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="fa-solid fa-file-alt"></i>
+                  <span>تقارير</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          -->
+          
+          <li>
+            <a href="#" class="menu-item">
+              <span>عن التخصص</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="menu-item">
+              <span>دليل الطالب</span>
+            </a>
+            <!--
+            <ul class="submenu">
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon assistant-icon"></i>
+                  <span>AI Assistant</span>
+                  <span class="tag">NEW</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon image-icon"></i>
+                  <span>AI Image Generator</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon video-icon"></i>
+                  <span>AI Video Generator</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon upscaler-icon"></i>
+                  <span>Image upscaler</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon retouch-icon"></i>
+                  <span>Retouch</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon reimagine-icon"></i>
+                  <span>Reimagine</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon bg-remover-icon"></i>
+                  <span>Background Remover</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon expand-icon"></i>
+                  <span>Expand</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon image-editor-icon"></i>
+                  <span>Image Editor</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon video-upscaler-icon"></i>
+                  <span>Video Upscaler</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon lip-sync-icon"></i>
+                  <span>Lip Sync</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon sound-effects-icon"></i>
+                  <span>Video Sound Effects</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon video-editor-icon"></i>
+                  <span>Video Editor</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon sketch-icon"></i>
+                  <span>Sketch to Image</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon mockup-icon"></i>
+                  <span>Mockup Generator</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon designer-icon"></i>
+                  <span>Designer</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon icon-generator-icon"></i>
+                  <span>AI Icon Generator</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon voice-icon"></i>
+                  <span>AI Voice Generator</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="submenu-item">
+                  <i class="icon freepik-ai-icon"></i>
+                  <span>Freepik AI</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          -->
+          <li>
+            <a href="#" class="menu-item">
+              <span>دليل الباحث</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#" class="menu-item">
+              <span>الدليل المهني</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="menu-item">
+              <span>الأخبار</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="menu-item">
+              <span>عن الموقع</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    <!-- Main content area -->
+    <div class="content" [class.with-sidebar]="isExpanded">
+      <!-- Your main content goes here -->
+      <ng-content></ng-content>
+    </div>
+  </div>

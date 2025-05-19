@@ -1,0 +1,13 @@
+<h2 class="section-title">أفضل المتخصصون</h2>
+<div class="globe-container">
+    <div #rendererContainer></div>
+  </div>
+  
+  <div class="container">
+    <div class="globe" id="globeContainer"></div>
+    <div class="photo-globe-container">
+  <div #rendererContainer class="renderer-container"></div>
+  <div *ngIf="hoverInfo" class="photo-tooltip" [style.left.px]="hoverInfo.x" [style.top.px]="hoverInfo.y">
+    {{ hoverInfo.description }}
+  </div>
+</div>

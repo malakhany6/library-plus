@@ -1,0 +1,57 @@
+/* who-we-are.component.css */
+.who-we-are-container {
+  background: linear-gradient(to right, #E6F2FF, #5FA8ED);
+  padding: 20px 20px;
+    direction: rtl; /* For Arabic text direction */
+    font-family: 'Cairo', 'dubai'; /* Arabic-friendly font */
+  }
+  
+  .content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .text-content {
+    flex: 1;
+    margin-top: 160px;
+  }
+  
+  .image-content {
+    flex: 1;
+    margin-bottom: 80px;
+  }
+  
+  .title {
+    color: #fff; /* Brown color for the title */
+    font-size: 46px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    color: #000000; /* Slightly lighter brown for the text */
+    font-size: 36px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .image-content img {
+    width: 100%;
+    border-radius: 8px;
+    margin-right: 300px;
+  }
+  
+  /* Media query for responsive design */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column-reverse;
+    }
+    
+    .text-content, .image-content {
+      width: 100%;
+    }
+  }

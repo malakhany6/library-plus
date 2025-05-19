@@ -1,0 +1,19 @@
+<!-- services.component.html -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدماتنا</h2>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="icon-container">
+          <i [ngClass]="service.iconName"></i>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <a [routerLink]="service.link" class="learn-more">تعرف علي المزيد</a>
+      </div>
+    </div>
+  </div>
+</section>

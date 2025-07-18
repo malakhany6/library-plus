@@ -1,24 +1,43 @@
-<!-- whats-new.component.html -->
 <div class="whats-new-container">
-    <div class="header">
-      <h2 class="title">ما الجديد؟</h2>
-      <p class="subtitle">نحن نعمل دائماً على تطوير وتحسين محتوانا لتزويدكم بأفضل المصادر والخدمات.</p>
-    </div>
+  <div class="section-header">
+    <h2 class="section-title">ما الجديد؟</h2>
+    <p class="section-subtitle">نحن نعمل دائماً على تطوير وتحسين خدماتنا لتوفير أفضل المعلومات والخدمات</p>
+  </div>
 
-    
-  <div class="features-container">
-    <div class="feature-card" *ngFor="let feature of features">
+  <div class="news-grid">
+    <div 
+      class="news-card" 
+      *ngFor="let newsItem of newsItems" 
+      #newsCard
+      (click)="onNewsCardClick(newsItem)"
+    >
+      <div class="news-badge" [ngClass]="getBadgeClass(newsItem.badgeType)">
+        {{ newsItem.badge }}
+      </div>
       
-
-       <!-- خلفية الفيديو -->
-       <video *ngIf="feature.videoBackground" autoplay muted loop class="video-bg">
-        <source [src]="feature.videoBackground" type="video/mp4" />
-      </video>
-    
-        <div class="feature-content">
-          <h3>{{feature.title}}</h3>
-          <p>{{feature.description}}</p>
+      <div class="news-icon">
+        {{ newsItem.icon }}
+      </div>
+      
+      <div class="news-content">
+        <h3 class="news-title">{{ newsItem.title }}</h3>
+        
+        <div class="news-date">
+          <span>📅</span>
+          <span>{{ newsItem.date }}</span>
         </div>
+        
+        <p class="news-description">{{ newsItem.description }}</p>
+        
+        <a [href]="newsItem.link" class="news-link" (click)="$event.stopPropagation()">
+          <span>اقرأ المزيد</span>
+          <span>←</span>
+        </a>
       </div>
     </div>
   </div>
+
+  <button class="load-more-btn" (click)="loadMore()">
+    عرض المزيد من الأخبار
+  </button>
+</div>

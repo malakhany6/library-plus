@@ -1,88 +1,255 @@
+/* Hero Section Styles */
 .hero-section {
-   /*background: linear-gradient(135deg, #e0f2ff 0%, #80c0ff 100%);*/
-    background: linear-gradient(to right, #E6F2FF, #5FA8ED);
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  } 
-  
-  .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 520px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(255, 255, 255, 0.2); /* لون الطبقة */
+  backdrop-filter: blur(0.1px);                 /* الضبابية */
+  z-index: 0;
+}
+
+.hero-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.main-title {
+  font-size: 2.9rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 2.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  max-width: 2000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card {
+  background: white;
+  border-radius: 40px;
+  padding: 4px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.service-image {
+  width: 130px; /* حجم الصورة */
+  height: 120px;
+  object-fit: contain; /* عشان الصورة ما تتقصش */
+  transition: transform 0.3s ease;
+}
+
+.service-image:hover {
+  transform: scale(1.05); /* تأثير عند التحويم */
+}
+
+.service-card:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-title {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 1000;
+  direction: rtl;
+  text-align: center;
+}
+
+.titleline1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+}
+
+.title-sub {
+  font-size: 26px;
+  color: #555;
+  font-weight: 1000;
+}
+
+.service-description {
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: center;
+  font-size: 25px;
+}
+
+.service-button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  font-family: cairo;
+  margin-bottom: 17px;
+}
+
+.service-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-button:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.btn-success:hover {
+   background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  color: white;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 15px;
   }
   
-  .hero-text {
-    width: 50%;
-    z-index: 2;
+  .main-title {
+    font-size: 2rem;
   }
   
-  .hero-image {
-    width: 40%;
-    z-index: 2;
+  .subtitle {
+    font-size: 1rem;
   }
   
-  .hero-image img {
-    width: 100%;
-    max-width: 400px;
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   
-  .hero-text h1 {
-    font-size: 50px;
-    color: #000000;
-    margin-bottom: 15px;
-    font-family: 'dubai';
+  .service-card {
+    padding: 25px 20px;
   }
   
-  .hero-text p {
-    font-size: 30px;
-    color: #333;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-family: 'dubai';
+  .icon {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.8rem;
   }
   
-  .search-box {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 50px;
-    overflow: hidden;
-    padding: 5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+  .service-title {
+    font-size: 1.2rem;
   }
   
-  .search-box input {
-    flex: 1;
-    border: none;
-    padding: 12px 20px;
-    font-size: 22px;
-    outline: none;
-    font-family: 'dubai';
+  .service-description {
+    font-size: 0.9rem;
   }
-  
-  .search-box button {
-    background-color: #fcfbf9;
-    border: none;
-    border-radius: 50px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .search-box button:hover {
-    background-color: #ffc107;
-  }
-  
-  .search-box button img {
-    width: 20px;
-    height: 80px;
-    top: -100px;
-  }
-  
+}

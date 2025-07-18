@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 interface PhotoData {
   url: string;
   description: string;
-  profileUrl: string; // LinkedIn profile URL
+  //profileUrl: string; // LinkedIn profile URL
 }
 
 @Component({
@@ -29,32 +29,51 @@ export class PhotoGlobeComponent implements OnInit, AfterViewInit {
 
   photoData: PhotoData[] = [
     { 
-      url: 'assets/mostafa-elhelaly.jpeg', 
-      description: 'د/ مصطفي الهلالي هو دكتور جامعي بجامعة القاهرة كلية الأداب قسم المكتبات و الوثائق و المعلومات',
-      profileUrl: 'https://www.linkedin.com/in/mostafa-el-helaly-1aa617158?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+      url: 'assets/emad-essa.jpg', 
+      description: 'ا.د عماد عيسى صالح محمد رئيس قسم المكتبات و المعلومات بكلية الآداب بجامعة حلوان، ونائب رئيس الاتحاد العربي للمكتبات و المعلومات',
+      //profileUrl: 'https://www.linkedin.com/in/mostafa-el-helaly-1aa617158?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
     },
 
     { 
-      url: 'assets/yaassmen-ashraf.jpeg', 
-      description: 'د/ ياسمين أشرف هي دكتورة جامعية بجامعة القاهرة كلية الأداب قسم المكتبات و الوثائق و المعلومات',
-      profileUrl: 'https://www.linkedin.com/in/yassmeenashraf95?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+      url: 'assets/hesham-ismail.jpg', 
+      description: 'ا.د هشام محمود عزمي رئيس الجهاز المصري للملكية الفكري أمين عام المجلس الأعلى للثقافة',
+     // profileUrl: 'https://www.linkedin.com/in/yassmeenashraf95?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
     },
     { 
-      url: 'assets/nada-hassan.jfif', 
-      description: 'د/ ندي حسن هي دكتورة جامعية بجامعة القاهرة كلية الأداب قسم المكتبات و الوثائق و المعلومات',
-      profileUrl: 'https://www.linkedin.com/in/nada-hassan-59a27b287'
+      url: 'assets/shaaban-khalifa.jpg', 
+      description: 'أ.د شعبان خليفة عضو الاتحاد الدولي لجمعيات المكتبات ومؤسساتها (IFLA)، و رئيس مجلس إدارة الجمعية المصرية للمكتبات والمعلومات (1994 - 2019)',
+      //profileUrl: 'https://www.linkedin.com/in/nada-hassan-59a27b287'
     },
     { 
-      url: 'assets/fatma-hamed.jpg', 
-      description: 'د/ فاطمة حامد هي دكتورة جامعية بجامعة القاهرة كلية الأداب قسم المكتبات و الوثائق و المعلومات',
-      profileUrl: 'https://www.linkedin.com/in/fatma-hamed-363a87b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      url: 'assets/abdalgalel-eltmimy.jpg', 
+      description: 'ا.د عبد الجليل التميميمن مؤسسي الاتحاد العربي للمكتبات والمعلومات، وأصدر المجلة العربية للأرشيف والتوثيق والمعلومات',
+      //profileUrl: 'https://www.linkedin.com/in/fatma-hamed-363a87b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
     },
     { 
-      url: 'assets/kareman-bakenam.jpeg', 
-      description: 'د/كريمان بكنام صدقي هي دكتورة جامعية بجامعة القاهرة كلية الأداب قسم المكتبات و الوثائق و المعلومات',
-      profileUrl: 'https://www.linkedin.com/in/kareman-baknam-sedki-8b77626a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app:'
+      url: 'assets/salwa-milad.jpg', 
+      description: 'ا.د سلوى علي ميلاد أول رائدة مصرية في تخصص الوثائق والأرشيف، عضو اللجنة العلمية الدائمة لترقية الأساتذة والأساتذة المساعدين وأمينة اللجنة العلمية الدائمة جامعة الأزهر.',
+      //profileUrl: 'https://www.linkedin.com/in/kareman-baknam-sedki-8b77626a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app:'
     },
-
+    { 
+      url: 'assets/riyad.jpg', 
+      description: 'أ. رياض طاهر رضوان دياب حاصل على جائزة رواد التخصص في التميز المهني، مدير مكتبة مصر العامة',
+      //profileUrl: 'https://www.linkedin.com/in/kareman-baknam-sedki-8b77626a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app:'
+    },
+    { 
+      url: 'assets/sherif-shahen.jpg', 
+      description: '. أ.د شريف كامل شاهين عميد كلية الآداب السابق بجامعة القاهرة ورئيس الجمعية المصرية للمكتبات والمعلومات',
+      //profileUrl: 'https://www.linkedin.com/in/kareman-baknam-sedki-8b77626a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app:'
+    },
+    { 
+      url: 'assets/mohamed-fathy.jpg', 
+      description: 'د. محمد فتحي عبد الهادي أستاذ متفرغ بقسم المكتبات بآداب القاهرة، من رواد التخصص بمصر والعالم العربي، حاز "جائزة رواد المكتبات" لجهوده في تطوير البحث العلمي والممارسات المهنية.',
+      //profileUrl: 'https://www.linkedin.com/in/kareman-baknam-sedki-8b77626a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app:'
+    },
+     { 
+      url: 'assets/mostafa-amien.jpg', 
+      description: 'د. مصطفى أمين حسام الدين أستاذ مساعد متفرغ بقسم المكتبات بآداب القاهرة، حائز على "جائزة رواد المكتبات" من أكاديمية نسيج تقديرًا لإسهاماته في النظم الآلية والضبط الببليوجرافي',
+      //profileUrl: 'https://www.linkedin.com/in/kareman-baknam-sedki-8b77626a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app:'
+    },
     // Add more photos with descriptions and profile URLs
   ];
 
@@ -209,7 +228,7 @@ export class PhotoGlobeComponent implements OnInit, AfterViewInit {
       photo.userData = {
         description: currentPhoto.description,
         originalUrl: currentPhoto.url,
-        profileUrl: currentPhoto.profileUrl
+        //profileUrl: currentPhoto.profileUrl
       };
       
       // Position the photo on the globe surface

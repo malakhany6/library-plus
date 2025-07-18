@@ -1,0 +1,44 @@
+<!-- flip-card.component.html -->
+ <div class="title">
+<h1>أدوات الأستشهاد المرجعي</h1>
+</div>
+
+<div class="subtitle">
+    <h2> في عالم البحث الأكاديمي، تُعد أدوات الاستشهاد المرجعي من الوسائل الأساسية التي تساعد الباحثين والطلاب على تنظيم المراجع بطريقة أكاديمية ودقيقة، توفر هذه الأدوات إمكانيات متقدمة لإدارة 
+        المراجع، وإنشاء ببليوغرافيات تلقائية، والتكامل مع برامج معالجة النصوص، في هذه الصفحة، نستعرض أبرز أدوات الاستشهاد المرجعي مع نبذة مختصرة عن كل أداة ورابط مباشر لموقعها الرسمي. </h2>
+</div>
+<!--Flipcard.html-->
+<div class="cards-container">
+  <div 
+    *ngFor="let card of cards; trackBy: trackByFn" 
+    class="flip-card"
+    [class.flipped]="card.id === flippedCardId"
+    (click)="toggleCard(card.id)"
+  >
+    <div class="flip-card-inner">
+      <!-- Front Side -->
+      <div class="flip-card-front">
+        <div class="card-image">
+  <img [src]="card.imageUrl" [alt]="card.title" />
+</div>
+        <h3 class="card-title">{{ card.title }}</h3>
+      </div>
+      
+      <!-- Back Side -->
+      <!-- Back Side -->
+<div class="flip-card-back">
+  <p class="card-description">{{ card.description }}</p>
+
+  <a
+    class="read-more-button"
+    [href]="card.link"
+    target="_blank"
+    rel="noopener noreferrer"
+    (click)="onReadMore($event, card)"
+  >
+    {{ card.buttonText }}
+  </a>
+</div>
+    </div>
+  </div>
+</div>

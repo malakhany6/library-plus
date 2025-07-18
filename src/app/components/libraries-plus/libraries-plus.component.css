@@ -71,6 +71,7 @@
   .menu-list {
     list-style-type: none;
     margin-bottom: 30px;
+    text-decoration: none;
   }
   
   .menu-list li {
@@ -98,6 +99,11 @@
     margin-bottom: 20px;
   }
   
+.footer-link {
+  text-decoration: none;
+  color: inherit; /* عشان ما يغيرش لون النص */
+}
+
   .form-row {
     display: flex;
     gap: 20px; /* مسافة بين الحقول */

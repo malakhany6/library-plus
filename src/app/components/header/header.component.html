@@ -1,19 +1,67 @@
-
-<header>
+<!-- header.component.html -->
+<header class="header">
+  <!-- Blue Search Section -->
+  <div class="search-section">
     <div class="container">
-      <div class="logo-container">
-        <img src="assets/libraryplus-logo.png" class="logo">
+      <div class="search-container">
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="بحث..."
+          [(ngModel)]="searchQuery"
+          (keyup.enter)="onSearch()">
+        <button class="search-btn" (click)="onSearch()">
+          <i class="search-icon">🔍</i>
+        </button>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li *ngFor="let item of navItems">
-            <a [routerLink]="item.link" [class.active]="item.name === 'الرئيسية'">{{ item.name }}</a>
+      
+      <!-- User/Login Section -->
+      <div class="user-section">
+       <a routerLink="/login" class="user-link">تسجيل الدخول</a>
+        <span class="separator">|</span>
+        <a routerLink="/signup" class="user-link">إنشاء حساب</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- White Navigation Section -->
+  <div class="nav-section">
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logo-section">
+        <img src="assets/libraryplus-logo.png" alt="Logo" class="logo">
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" [class.active]="isMenuOpen">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" (click)="onMenuItemClick('home')">الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" (click)="onMenuItemClick('about-specialization')">عن التخصص</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="onMenuItemClick('jobs-institutions')">الوظائف والمؤسسات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="onMenuItemClick('learning-reference')">مصادر التعلم</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="onMenuItemClick('scientific-research')">البحث العلمي</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link active" (click)="onMenuItemClick('about-portal')">عن البوابة</a>
           </li>
         </ul>
       </nav>
-      <div class="login-btn">
-        <button>تسجيل دخول</button>
-      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
     </div>
-  </header>
-  
+  </div>
+</header>

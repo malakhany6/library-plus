@@ -1,0 +1,141 @@
+<!-- signup.component.html -->
+  <div class="hero-section" [ngStyle]="{'background-image': 'url(assets/library.jpeg)'}">
+<div class="signup-container">
+  <div class="form-card">
+    <div class="form-header">
+      <h2>Join Library Plus</h2>
+      <p>Create your account to get started</p>
+    </div>
+    
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input 
+          type="text" 
+          id="firstName" 
+          formControlName="firstName"
+          placeholder="Enter your first name"
+          [class.error]="isFieldInvalid('firstName')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('firstName')">
+          {{ getFieldError('firstName') }}
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input 
+          type="text" 
+          id="lastName" 
+          formControlName="lastName"
+          placeholder="Enter your last name"
+          [class.error]="isFieldInvalid('lastName')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('lastName')">
+          {{ getFieldError('lastName') }}
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email"
+          placeholder="Enter your email"
+          [class.error]="isFieldInvalid('email')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('email')">
+          {{ getFieldError('email') }}
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="password"
+          placeholder="Create a password"
+          [class.error]="isFieldInvalid('password')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('password')">
+          {{ getFieldError('password') }}
+        </div>
+        <div class="password-strength">
+          <div class="strength-bar">
+            <div 
+              class="strength-fill" 
+              [style.width.%]="passwordStrength"
+              [class]="getPasswordStrengthClass()"
+            ></div>
+          </div>
+          <span 
+            class="strength-text"
+            [class]="getPasswordStrengthClass()"
+          >
+            {{ passwordStrengthText }}
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          formControlName="confirmPassword"
+          placeholder="Confirm your password"
+          [class.error]="isFieldInvalid('confirmPassword') || isFormInvalid('passwordMismatch')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('confirmPassword')">
+          {{ getFieldError('confirmPassword') }}
+        </div>
+        <div class="error-message" *ngIf="isFormInvalid('passwordMismatch')">
+          Passwords do not match
+        </div>
+      </div>
+      
+      <div class="checkbox-group">
+        <input 
+          type="checkbox" 
+          id="terms" 
+          formControlName="terms"
+          [class.error]="isFieldInvalid('terms')"
+        >
+        <label for="terms">
+          I agree to the <a href="#" onclick="event.preventDefault()">Terms of Service</a> 
+          and <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
+        </label>
+      </div>
+      <div class="error-message" *ngIf="isFieldInvalid('terms')">
+        {{ getFieldError('terms') }}
+      </div>
+      
+      <button 
+        type="submit" 
+        class="submit-btn"
+        [disabled]="isLoading"
+        [class.loading]="isLoading"
+      >
+        <span *ngIf="!isLoading">Create Account</span>
+        <span *ngIf="isLoading">Creating Account...</span>
+      </button>
+    </form>
+    
+    <div class="divider">
+      <span>or</span>
+    </div>
+    
+    <button class="social-btn" (click)="onGoogleSignup()">
+      <span class="google-icon">🔵</span> Sign up with Google
+    </button>
+    
+    <div class="form-footer">
+      Already have an account? 
+      <a href="#" (click)="navigateToLogin(); $event.preventDefault()">
+        Sign in
+      </a>
+    </div>
+  </div>
+</div>

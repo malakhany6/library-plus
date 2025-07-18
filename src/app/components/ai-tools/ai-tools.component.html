@@ -1,0 +1,46 @@
+<!-- ai-tools.component.html -->
+ <div class="title">
+<h1>أدوات الذكاء الأصطناعي</h1>
+</div>
+
+<div class="subtitle">
+    <h2> في عصر تسارع المعرفة وتطور أدوات البحث العلمي، أصبح من الضروري الإلمام 
+      بالأدوات الذكية التي تعزز من كفاءة الباحث وتُيسر عليه الوصول للمصادر والمراجع العلمية.
+في هذه الصفحة، نستعرض مجموعة مختارة من أبرز الأدوات الرقمية
+ المساعدة في رحلتك البحثية، مثل أدوات استكشاف العلاقات بين الأوراق العلمية، وإدارة الملاحظات، وتحليل الأدبيات، والبحث الذكي المدعوم بالذكاء الاصطناعيت، صفّح البطاقات التالية للتعرف على كل أداة واكتشاف كيف يمكن أن تُحدث فرقًا في تجربتك الأكاديمية. </h2>
+</div>
+<!--Flipcard.html-->
+<div class="cards-container">
+  <div 
+    *ngFor="let card of cards; trackBy: trackByFn" 
+    class="flip-card"
+    [class.flipped]="card.id === flippedCardId"
+    (click)="toggleCard(card.id)"
+  >
+    <div class="flip-card-inner">
+      <!-- Front Side -->
+      <div class="flip-card-front">
+        <div class="card-image">
+  <img [src]="card.imageUrl" [alt]="card.title" />
+</div>
+        <h3 class="card-title">{{ card.title }}</h3>
+      </div>
+      
+      <!-- Back Side -->
+      <!-- Back Side -->
+<div class="flip-card-back">
+  <p class="card-description">{{ card.description }}</p>
+
+  <a
+    class="read-more-button"
+    [href]="card.link"
+    target="_blank"
+    rel="noopener noreferrer"
+    (click)="onReadMore($event, card)"
+  >
+    {{ card.buttonText }}
+  </a>
+</div>
+    </div>
+  </div>
+</div>

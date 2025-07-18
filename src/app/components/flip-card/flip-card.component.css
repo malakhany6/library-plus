@@ -1,0 +1,229 @@
+/* flip-card.component.css */
+
+.title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.title h1 {
+  font-size: 36px;
+  color: #2c3e50;
+  /*border-bottom: 3px solid #3498db;*/
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.subtitle {
+  max-width: 1700px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Cairo', sans-serif;
+  background-color: #f9f9f9;
+  border-right: 6px solid #3498db;
+  direction: rtl;
+  line-height: 2;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+.subtitle h2 {
+  font-size: 27px;
+  font-weight: normal;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 99px;
+  padding: 70px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 125%;
+  height: 270px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* Hover effect for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Click effect for mobile */
+@media (hover: none) or (pointer: coarse) {
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-card-front, 
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #334155;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #475569;
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Added missing card-image styles */
+.card-image {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.card-image img {
+  max-width: 95px;
+  height: 99px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: 550;
+  margin: 0;
+  color: #1e293b;
+  line-height: 1.3;
+  font-family: 'Calibri';
+}
+
+.card-description {
+  font-size: 25px;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Fixed class name to match HTML */
+.read-more-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'cairo';
+  text-decoration: none;
+  display: inline-block;
+}
+
+.read-more-button:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.read-more-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .flip-card {
+    height: 220px;
+  }
+  
+  .card-image {
+    height: 40px !important;
+    justify-content: flex-end !important;
+    padding: 10px !important;
+  }
+
+  .card-image img {
+    max-width: 100px !important;
+    height: 100px !important;
+    object-fit: contain !important;
+  }
+  
+  .card-title {
+    font-size: 18px;
+  }
+  
+  .card-description {
+    font-size: 14px;
+  }
+  
+  .flip-card-front, 
+  .flip-card-back {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .flip-card {
+    height: 200px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-description {
+    font-size: 13px;
+  }
+}

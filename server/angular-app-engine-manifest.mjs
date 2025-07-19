@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: 'C:/Program Files/Git/library-plus',
   supportedLocales: {
   "en-US": ""
 },

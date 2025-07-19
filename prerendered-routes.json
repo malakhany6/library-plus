@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/": {},
+    "/about-portal": {},
+    "/ai-tools": {},
+    "/flip-card": {},
+    "/login": {},
+    "/photo-glope": {},
+    "/signup": {}
+  }
+}
